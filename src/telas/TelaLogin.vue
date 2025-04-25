@@ -94,14 +94,17 @@ carregando.value = true;
 erro.value = '';
 
 try {
-  const resposta = await fetch("/api-login", {
+  const resposta = await fetch("https://script.google.com/macros/s/AKfycbzG570AZk6-Sd4J3U3tCuEy3jc_YA4PcNaF7VEoKwwq4msnXiRLYQ_T9djEZ0miW98t/exec", {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: {
+      "Content-Type": "application/json"
+    },
     body: JSON.stringify({
       usuario: usuario.value,
       senha: senha.value
     })
   });
+
   
 
   const resultado = await resposta.json();
